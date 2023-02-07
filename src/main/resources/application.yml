@@ -1,0 +1,49 @@
+server:
+  port: 8080
+
+logging:
+  level:
+    root: INFO
+    org.springframework.web: DEBUG
+    org.springframework.security: DEBUG
+#    org.springframework.boot.autoconfigure: DEBUG
+
+spring:
+  thymeleaf:
+    cache: false
+  security:
+    oauth2:
+      client:
+        registration:
+          login-client2:
+            provider: spring
+            client-id: login-client2
+            client-secret: openid-connect
+            client-authentication-method: client_secret_basic
+            authorization-grant-type: authorization_code
+            redirect-uri: '{baseUrl}/login/oauth2/code/{registrationId}'
+            scope: openid,profile,email,resource.read,test
+            client-name: Spring
+          google:
+            client-id: your-app-client-id
+            client-secret: your-app-client-secret
+          github:
+            client-id: your-app-client-id
+            client-secret: your-app-client-secret
+          facebook:
+            client-id: your-app-client-id
+            client-secret: your-app-client-secret
+          okta:
+            client-id: your-app-client-id
+            client-secret: your-app-client-secret
+        provider:
+          spring:
+            authorization-uri: http://10.168.1.224:9000/oauth2/authorize
+            token-uri: http://10.168.1.224:9000/oauth2/token
+            jwk-set-uri: http://10.168.1.224:9000/oauth2/jwks
+          okta:
+            authorization-uri: https://your-subdomain.oktapreview.com/oauth2/v1/authorize
+            token-uri: https://your-subdomain.oktapreview.com/oauth2/v1/token
+            user-info-uri: https://your-subdomain.oktapreview.com/oauth2/v1/userinfo
+            jwk-set-uri: https://your-subdomain.oktapreview.com/oauth2/v1/keys
+debug: true
