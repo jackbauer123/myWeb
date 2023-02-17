@@ -23,6 +23,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.Mapping;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 /**
@@ -35,19 +36,19 @@ import org.springframework.web.bind.annotation.RequestMapping;
 public class OAuth2LoginController {
 
 	@GetMapping("/")
-	public String index(Model model, @RegisteredOAuth2AuthorizedClient OAuth2AuthorizedClient authorizedClient,
+	public String index(Model model, /*@RegisteredOAuth2AuthorizedClient OAuth2AuthorizedClient authorizedClient,*/
 			@AuthenticationPrincipal OAuth2User oauth2User) {
-		System.out.println(authorizedClient.getAccessToken().getTokenValue());
-		model.addAttribute("userName", oauth2User.getName());
-		model.addAttribute("tokenValue",authorizedClient.getAccessToken().getTokenValue());
-		model.addAttribute("clientName", authorizedClient.getClientRegistration().getClientName());
-		model.addAttribute("userAttributes", oauth2User.getAttributes());
+		//model.addAttribute("userName", oauth2User.getName());
+		//model.addAttribute("tokenValue",authorizedClient.getAccessToken().getTokenValue());
+		//model.addAttribute("clientName", authorizedClient.getClientRegistration().getClientName());
+		//model.addAttribute("userAttributes", oauth2User.getAttributes());
 		return "index";
 	}
 
 	@GetMapping("/login/oauth2")
-	public String login(){
-		return "login.html";
+	String login() {
+		return "login";
+
 	}
 
 

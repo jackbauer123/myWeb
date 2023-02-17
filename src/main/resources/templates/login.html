@@ -30,7 +30,7 @@
               </div>
               <h4>Welcome back!</h4>
               <h6 class="font-weight-light">Happy to see you again!</h6>
-              <form class="pt-3" th:action="@{/myloginprocess}"  method="post" id="loginform">
+              <form class="pt-3" th:action="@{/login}"  method="post" id="loginform">
                 <div class="form-group">
                   <label for="username">Username</label>
                   <div class="input-group">
@@ -39,7 +39,7 @@
                         <i class="mdi mdi-account-outline text-primary"></i>
                       </span>
                     </div>
-                    <input type="text" class="form-control form-control-lg border-left-0" id="username"  th:value="*{username}" placeholder="Username">
+                    <input type="text" class="form-control form-control-lg border-left-0" id="username"  name="username" placeholder="Username">
                   </div>
                 </div>
                 <div class="form-group">
@@ -50,7 +50,7 @@
                         <i class="mdi mdi-lock-outline text-primary"></i>
                       </span>
                     </div>
-                    <input type="password" class="form-control form-control-lg border-left-0" id="password" th:value="*{password}" placeholder="Password">
+                    <input type="password" class="form-control form-control-lg border-left-0" id="password" name="password" placeholder="Password">
                   </div>
                 </div>
                 <div class="my-2 d-flex justify-content-between align-items-center">

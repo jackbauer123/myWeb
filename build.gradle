@@ -20,8 +20,11 @@ dependencies {
     implementation 'org.springframework.boot:spring-boot-starter-web'
     implementation 'org.thymeleaf.extras:thymeleaf-extras-springsecurity6'
     implementation group: 'org.projectlombok', name: 'lombok', version: '1.18.26'
+    implementation group: 'com.aliyun', name: 'aliyun-java-sdk-core', version: '4.5.16'
+    implementation group: 'com.aliyun', name: 'alibabacloud-dysmsapi20170525', version: '2.0.22'
     testImplementation 'org.springframework.boot:spring-boot-starter-test'
     testImplementation 'org.springframework.security:spring-security-test'
+
 
     integTestImplementation 'net.sourceforge.htmlunit:htmlunit'
 }

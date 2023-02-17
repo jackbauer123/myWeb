@@ -1,5 +1,5 @@
 server:
-  port: 8080
+  port: 8081
 
 logging:
   level:
@@ -38,9 +38,9 @@ spring:
             client-secret: your-app-client-secret
         provider:
           spring:
-            authorization-uri: http://10.168.1.224:9000/oauth2/authorize
-            token-uri: http://10.168.1.224:9000/oauth2/token
-            jwk-set-uri: http://10.168.1.224:9000/oauth2/jwks
+            authorization-uri: http://www.xg.com:9000/oauth2/authorize
+            token-uri: http://www.xg.com:9000/oauth2/token
+            jwk-set-uri: http://www.xg.com:9000/oauth2/jwks
           okta:
             authorization-uri: https://your-subdomain.oktapreview.com/oauth2/v1/authorize
             token-uri: https://your-subdomain.oktapreview.com/oauth2/v1/token
