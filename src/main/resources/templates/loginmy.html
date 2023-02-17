@@ -2,6 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="https://www.thymeleaf.org">
 <head>
     <title>Please Log In</title>
+    <link rel="stylesheet"  th:href="@{/css/drag.css}">
 </head>
 <body>
 <h1>Please Log In</h1>
@@ -16,7 +17,14 @@
     <div>
         <input type="password" name="password" placeholder="Password"/>
     </div>
+    <br><div id="drag"></div>
     <input type="submit" value="Log in" />
 </form>
+<script th:src="@{/js/jquery-1.7.2.min.js}"></script>
+<script th:src="@{/js/drag.js}" ></script>
+<script type="text/javascript">
+    console.log("test");
+    $('#drag').drag();
+</script>
 </body>
 </html>
